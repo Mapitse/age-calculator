@@ -1,0 +1,38 @@
+spring:
+  datasource:
+
+    # =======================================
+    # = LOCAL - POSTGRESQL DB
+    # =======================================
+
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/age_cal_db
+    username: postgres
+    password: ACP_P@ssword@123
+
+  # =======================================
+  # = JPA / HIBERNATE - FOR POSTGRESQL DATABASE LOCAL
+  # =======================================
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      format-sql: true
+    properties:
+      dialect: org.springframework.data.relational.core.dialect.PostgresDialect
+
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
+
+application:
+  title: Simple Age Calculator
+
+
+cors:
+  origin: http://@auth:300
+  # by default is GET, HEAD, POST
+  # "*" allows all methods
+  allowed-method: "*"
